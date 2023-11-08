@@ -14,6 +14,7 @@ public class StreamingService {
     private ResourceLoader resourceLoader;
 
     public Mono<Resource> getVideo(String title){
-        return Mono.fromSupplier(()->resourceLoader.getResource(String.format(FORMAT)));
+        return Mono.fromSupplier(()->resourceLoader
+                .getResource(String.format(FORMAT,title)));
     }
 }

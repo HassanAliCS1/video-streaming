@@ -1,6 +1,7 @@
 package com.springWebflux.streaming;
 
 import com.springWebflux.streaming.StreamingService.StreamingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.io.Resource;
@@ -14,6 +15,7 @@ import reactor.core.publisher.Mono;
 @RestController
 public class VideoStreamingApplication {
 
+	@Autowired
 	private StreamingService streamingService;
 
 	@GetMapping(value = "video/{title}", produces = "video/mp4")
